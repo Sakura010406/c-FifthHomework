@@ -1,0 +1,173 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CsForthHomework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CsForthHomework.Tests
+{
+    [TestClass()]
+    public class OrderServiceTests
+    {
+        [TestMethod()]
+        public void OrderServiceTest()
+        {
+           
+        }
+
+        [TestMethod()]
+        public void ExportTest()
+        {
+         
+        }
+
+        [TestMethod()]
+        public void ImportTest()
+        {
+          
+        }
+
+        [TestMethod()]
+        public void showManuTest()
+        {
+           
+        }
+
+        [TestMethod()]
+        public void SortTest()
+        {
+            OrderService service = new OrderService();
+
+            OrderDetails detail1 = new OrderDetails(DateTime.Now, false);
+
+            OrderDetails detail2 = new OrderDetails(DateTime.Now, false);
+
+            Order order1 = new Order(1, "鞋子", "张三", 680, detail2);
+
+            Order order2 = new Order(2, "书本", "李四", 300, detail1);
+
+            List<Order> list1 = new List<Order>();
+
+            List<Order> list2 = new List<Order>();
+
+            list1.Add(order1);
+
+            list1.Add(order2);
+
+            list2.Add(order2);
+
+            list2.Add(order1);
+
+            service.Sort(list2);
+
+            Assert.AreEqual(list1, list2);
+        }
+
+        [TestMethod()]
+        public void addOrderTest()
+        {
+            OrderService service = new OrderService();
+
+            OrderDetails detail1 = new OrderDetails(DateTime.Now, false);
+
+            OrderDetails detail2 = new OrderDetails(DateTime.Now, false);
+
+            Order order1 = new Order(1, "鞋子", "张三", 680, detail2);
+
+            Order order2 = new Order(2, "书本", "李四", 300, detail1);
+
+            List<Order> list1 = new List<Order>();
+
+            List<Order> list2 = new List<Order>();
+
+            list1.Add(order1);
+
+            list1.Add(order2);
+
+            list2.Add(order1);
+
+            service.Sort(list2);
+
+            Assert.AreEqual(list1, list2);
+        }
+
+        [TestMethod()]
+        public void deleteOrderTest()
+        {
+            OrderService service = new OrderService();
+
+            OrderDetails detail1 = new OrderDetails(DateTime.Now, false);
+
+            OrderDetails detail2 = new OrderDetails(DateTime.Now, false);
+
+            Order order1 = new Order(1, "鞋子", "张三", 680, detail2);
+
+            Order order2 = new Order(2, "书本", "李四", 300, detail1);
+
+            List<Order> list1 = new List<Order>();
+
+            List<Order> list2 = new List<Order>();
+
+            list1.Add(order1);
+
+            list2.Add(order2);
+
+            list2.Add(order1);
+
+            service.Sort(list2);
+
+            Assert.AreEqual(list1, list2);
+        }
+
+        [TestMethod()]
+        public void modifyOrderTest()
+        {
+           
+        }
+
+        [TestMethod()]
+        public void inquireOrderTest()
+        {
+           
+        }
+
+        [TestMethod()]
+        public void showOrderTest()
+        {
+            OrderService service = new OrderService();
+
+            OrderDetails detail1 = new OrderDetails(DateTime.Now, false);
+
+            OrderDetails detail2 = new OrderDetails(DateTime.Now, false);
+
+            Order order1 = new Order(1, "鞋子", "张三", 680, detail2);
+
+            Order order2 = new Order(2, "书本", "李四", 300, detail1);
+
+            List<Order> list1 = new List<Order>();
+
+            List<Order> list2 = new List<Order>();
+
+            list1.Add(order1);
+
+            list1.Add(order2);
+
+            list2.Add(order1);
+
+            list2.Add(order2);
+
+            service.Sort(list2);
+
+            Assert.AreEqual(list1, list2);
+
+        }
+
+        [TestMethod()]
+        public void exitTest()
+        {
+           
+        }
+    }
+}
